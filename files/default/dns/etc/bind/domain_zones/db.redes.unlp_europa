@@ -1,0 +1,4 @@
+; Main configuration file
+$INCLUDE /etc/bind/domain_zones/db.redes.unlp_root
+; CDN
+static		IN	CNAME	europa

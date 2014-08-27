@@ -1,0 +1,23 @@
+$ORIGIN .
+$TTL 300        ; 5 minutes
+redes.unlp	IN      SOA     ns1.redes.unlp. hostmaster.redes.unlp. (
+                                2014081600 ; serial
+                                28800      ; refresh (8 hours)
+                                900        ; retry (15 minutes)
+                                3600       ; expire (1 hour)
+                                3600       ; minimum (1 hour)
+                        )
+                IN      NS      ns1.redes.unlp.
+                IN      NS      ns2.redes.unlp.
+                IN      A       190.205.40.3
+
+$ORIGIN redes.unlp.
+; CORE
+ns1		IN	A	190.205.40.8
+ns2		IN	A	190.205.40.8
+www		IN	A	190.205.40.3
+; CDN
+africa		IN	A	222.12.25.22
+america		IN	A	189.32.120.14
+asia		IN	A	154.23.129.10
+europa		IN	A	105.4.12.3

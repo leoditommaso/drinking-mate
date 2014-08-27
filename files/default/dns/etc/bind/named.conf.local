@@ -1,0 +1,82 @@
+//
+// Do any unlp configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+acl "africa" {
+	190.205.40.11/32;
+        209.0.0.0/8;
+        222.0.0.0/8;
+};
+
+acl "america" {
+        184.0.0.0/8;
+        189.0.0.0/8;
+	190.205.40.10/32;
+};
+
+acl "asia" {
+        154.0.0.0/8;
+        160.0.0.0/8;
+};
+
+acl "europa" {
+        100.0.0.0/8;
+        105.0.0.0/8;
+	190.205.40.1/32;
+};
+
+view "africa" {
+        recursion no;
+        allow-query { any; };
+        match-clients {
+		africa;
+        };
+        zone "redes.unlp" {
+                type master;
+                file "/etc/bind/domain_zones/db.redes.unlp_africa";
+        };
+	include "/etc/bind/named.conf.default-zones";
+};
+
+view "america" {
+        recursion no;
+        allow-query { any; };
+        match-clients {
+		america;
+        };
+        zone "redes.unlp" {
+                type master;
+                file "/etc/bind/domain_zones/db.redes.unlp_america";
+        };
+	include "/etc/bind/named.conf.default-zones";
+};
+
+view "asia" {
+        recursion no;
+        allow-query { any; };
+        match-clients {
+		asia;
+        };
+        zone "redes.unlp" {
+                type master;
+                file "/etc/bind/domain_zones/db.redes.unlp_asia";
+        };
+	include "/etc/bind/named.conf.default-zones";
+};
+
+view "europa" {
+        recursion no;
+        allow-query { any; };
+        match-clients {
+		europa;
+        };
+        zone "redes.unlp" {
+                type master;
+                file "/etc/bind/domain_zones/db.redes.unlp_europa";
+        };
+	include "/etc/bind/named.conf.default-zones";
+};
