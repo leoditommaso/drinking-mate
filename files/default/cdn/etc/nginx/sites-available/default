@@ -1,0 +1,12 @@
+server {
+
+  server_name static.redes.unlp;
+
+  proxy_cache one;
+        location / {
+      proxy_cache_valid any   1m;
+            proxy_cache_min_uses 1;
+            proxy_pass http://www.redes.unlp;
+        }
+
+}
