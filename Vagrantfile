@@ -40,6 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::webserver]'
       ]
     end
@@ -60,6 +61,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::cdn]'
       ]
     end
@@ -80,6 +82,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::cdn]'
       ]
     end
@@ -100,6 +103,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::cdn]'
       ]
     end
@@ -120,6 +124,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::cdn]'
       ]
     end
@@ -141,6 +146,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::desktop]'
       ]
     end
@@ -162,6 +168,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::desktop]'
       ]
     end
