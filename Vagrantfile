@@ -37,9 +37,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     www.vm.provision :chef_solo do |chef|
       chef.json = {
+        :mysql => {
+          :server_root_password => 'rootpass',
+          :server_debian_password => 'debpass',
+          :server_repl_password => 'rootpass'
+        }
       }
       chef.run_list = [
         'recipe[apt::default]',
+        'recipe[database::mysql]',
+        'recipe[mysql::server]',
         'recipe[lab-cdn::resolver]',
         'recipe[lab-cdn::webserver]'
       ]

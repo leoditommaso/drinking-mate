@@ -6,4 +6,6 @@ description      'Installs/Configures lab-cdn'
 long_description 'Installs/Configures lab-cdn'
 version          '0.1.0'
 
-depends 'apt'
+depends 'apt', "=2.5.3"
+depends 'database', "=2.3.0"
+depends 'mysql', "=5.4.0"

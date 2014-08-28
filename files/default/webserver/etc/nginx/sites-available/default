@@ -1,0 +1,26 @@
+server {
+
+  root /opt/applications/wordpress;
+  index index.php index.htm;
+
+  server_name www.redes.unlp redes.unlp;
+
+  # Logging
+  access_log /var/log/nginx/wordpress-access.log;
+  error_log /var/log/nginx/wordpress-error.log;
+
+  location / {
+    try_files $uri $uri/ /index.php?$args;
+  }
+
+  # PHP requests are managed by php-fpm using FastCGI
+  location ~* \.php$ {
+    try_files       $uri /index.php;
+    fastcgi_index   index.php;
+    fastcgi_pass    127.0.0.1:9000;
+    include         fastcgi_params;
+    fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+    fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+  }
+
+}
