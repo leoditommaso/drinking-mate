@@ -7,7 +7,7 @@
 //include "/etc/bind/zones.rfc1918";
 
 acl "africa" {
-	190.205.40.11/32;
+        190.205.40.11/32;
         209.0.0.0/8;
         222.0.0.0/8;
 };
@@ -15,68 +15,69 @@ acl "africa" {
 acl "america" {
         184.0.0.0/8;
         189.0.0.0/8;
-	190.205.40.10/32;
+        190.205.40.10/32;
 };
 
 acl "asia" {
         154.0.0.0/8;
         160.0.0.0/8;
+        190.205.40.3/32; // Webserver, here just to resolve outside domains.
 };
 
 acl "europa" {
         100.0.0.0/8;
         105.0.0.0/8;
-	190.205.40.1/32;
+        190.205.40.1/32;
 };
 
 view "africa" {
-        recursion no;
+        recursion yes;
         allow-query { any; };
         match-clients {
-		africa;
+          africa;
         };
         zone "redes.unlp" {
                 type master;
                 file "/etc/bind/domain_zones/db.redes.unlp_africa";
         };
-	include "/etc/bind/named.conf.default-zones";
+        include "/etc/bind/named.conf.default-zones";
 };
 
 view "america" {
-        recursion no;
+        recursion yes;
         allow-query { any; };
         match-clients {
-		america;
+          america;
         };
         zone "redes.unlp" {
                 type master;
                 file "/etc/bind/domain_zones/db.redes.unlp_america";
         };
-	include "/etc/bind/named.conf.default-zones";
+        include "/etc/bind/named.conf.default-zones";
 };
 
 view "asia" {
-        recursion no;
+        recursion yes;
         allow-query { any; };
         match-clients {
-		asia;
+          asia;
         };
         zone "redes.unlp" {
                 type master;
                 file "/etc/bind/domain_zones/db.redes.unlp_asia";
         };
-	include "/etc/bind/named.conf.default-zones";
+        include "/etc/bind/named.conf.default-zones";
 };
 
 view "europa" {
-        recursion no;
+        recursion yes;
         allow-query { any; };
         match-clients {
-		europa;
+          europa;
         };
         zone "redes.unlp" {
                 type master;
                 file "/etc/bind/domain_zones/db.redes.unlp_europa";
         };
-	include "/etc/bind/named.conf.default-zones";
+        include "/etc/bind/named.conf.default-zones";
 };
