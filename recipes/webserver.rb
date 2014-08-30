@@ -1,7 +1,7 @@
 package 'git'
 package 'nginx'
 package 'php5-fpm'
-package 'php5-mysqlnd'
+package 'php5-mysql'
 
 cookbook_file "/etc/nginx/nginx.conf" do
   source "webserver/etc/nginx/nginx.conf"
