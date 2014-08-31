@@ -54,6 +54,7 @@ would make the lab run much faster.
 ## Usage
 
 To use it on your machine, the steps are:
+
 1. Clone this repository.
 2. Install required gems ('bundle install' should do the trick).
 3. In the repository directory run 'vagrant up'.
