@@ -172,9 +172,9 @@ and could be extended with new requirements and features.
 
 Author:: Leandro Di Tommaso (<leandro.ditommaso@mikroways.net>)
 
-This cookbook was written as part of the work required for the subject "Redes y
-Servicios Avanzados en Internet", which belongs to the Licenciatura en 
+This cookbook was written as part of a research work required for the subject
+"Redes y Servicios Avanzados en Internet", which belongs to the Licenciatura en 
 Informática and Licenciatura en Sistemas degree, at Universidad Nacional de La 
-Plata. Feel free to use, improve, modify and share it as stated in the GPL
+Plata. Feel free to use, improve, modify and share it as stated in the MIT
 License under which this project is released.
 
